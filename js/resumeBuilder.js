@@ -45,7 +45,7 @@ var bio = {
 		"email": "fboydc@gmail.com",
 		"github": "fboydc",
 		"twitter": "felipe.boyd",
-		"location": "Miami"
+		"location": "Miami, FL"
 	},
 	"skills": [
 		"Front End Development", "Server Side Technologies", "Responsive Websites", "Web/Graphic Design Rookie", "Aspiring 3D Modeler"
@@ -88,7 +88,6 @@ var education = {
 }
 
 /***********   DISPLAY FUNCTION    ************/
-
 
 
 
