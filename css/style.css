@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* zocial */
+[class*="fontawesome-"]:before {
+  font-family: 'fontawesome', sans-serif;
+  font-size: 1.5em;
+}
 body,
 div,
 ul,
@@ -14,19 +21,39 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+
+
 .clear-fix {
   overflow: auto;
+}
+
+#projects {
+  box-sixing: border-box;
+  padding-bottom: 1em;
 }
 
 .education-entry,
 .work-entry,
 .project-entry {
+  box-sizing: border-box;
   padding: 0 5%;
+  margin: auto;
+  font-size: 1.2em;
+  text-align: justify;
 }
+/*
+.education-entry p,
+.work-entry p,
+.project-entry p {
+
+  font-size: 0.7em;
+}*/
+
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  /*color: #f5a623;*/
+  color: #9DB5B2;
   line-height: 48px;
   display: inline;
 }
@@ -62,6 +89,10 @@ h5 {
 }
 
 
+hr {
+
+}
+
 .date-text {
   font-style: italic;
   font-size: 14px;
@@ -86,10 +117,21 @@ p {
 }
 
 a {
-  color: #1199c3;
+  /*color: #1199c3;*/
+  color: #94D1BE;
+  font-weight: 600;
   text-decoration: none;
   margin-top: 10px;
   display: block;
+}
+
+.main-division {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }
 
 .welcome-message {
@@ -99,17 +141,32 @@ a {
   line-height: 28px;
 }
 
-#skills-h3 {
-  color: #f5ae23;
+#skills {
   display: none;
+  /*display: block;
+  /*position: relative;*/
+  /*text-align: center;
+  line-height: 1.5em;
+  font-size: 0.7em;*/
+}
+
+#skills-h3 {
+  /*color: #f5ae23;*/
+  color: #9db5b2;
+  display: none;
+
+
 }
 
 .orange {
-  background-color: #f5ae23;
+  /*background-color: #f5ae23;*/
+  background-color: #94d1be;
+  color: #fff;
 }
 
 .orange-text {
-  color: #f5ae23;
+  /*color: #9db52;*/
+  color: #9db5b2;
 }
 
 .white-text {
@@ -129,7 +186,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #3b413c;
 }
 
 .flex-box {
@@ -158,9 +215,12 @@ ul {
 
 .biopic {
   float: left;
-  padding: 10px;
+  padding: 3px;
   width: 200px;
-  display: none;
+  /*display: none;*/
+  border: 1px solid white;
+  margin-right: 10px;
+  border-radius: 50%;
 }
 
 img {
@@ -176,56 +236,119 @@ span {
 }
 
 
+/************** CLASSES ADDED BY ME ******************************/
 
+
+.thumbnail {
+margin-top: 10px;
+margin-left: auto;
+border: 1px solid #3b413c;
+padding: 3px;
+}
 
 /********************** CUSTOM CSS ADDED BY FELIPE **************/
 
 #role_title {
   font-weight: 600;
+  color: #fff;
+}
+
+
+
+#map {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  margin: 0 5%;
+  border-radius: 5px;
+  box-shadow:10px 5px 5px black;
+  /*margin-bottom: 20px;*/
+}
+
+#mapDiv {
+  box-sizing: border-box;
+  height: 400px;
+  width: 100%;
+  background-color: #daf0ee;
+  padding-bottom: 6em;
+
+}
+
+#topContacts{
+  display: none;
 }
 
 /* Media queries to handle various device widths */
 
-@media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
+@media only screen and (max-width: 358px){
+  h1 {
+    font-size: 1.5em;
+  }
+
+  #role_title {
+    font-size: 0.7em;
   }
 }
+
 
 @media only screen and (max-width:900px) {
   .biopic {
     width: 175px;
   }
+
+  /*.work-entry p {
+    text-align: justify;
+  }*/
 }
 
 @media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
+  /*
   .biopic {
     width: 150px;
-  }
+  }*/
   .welcome-message {
     display: none;
   }
+
 }
 
-#map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
-}
 
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
-}
 
-@media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
+@media only screen and (min-width:500px){
+
+    #skills/*,
+  .biopic*/ {
+      padding-top: 0px;
+      display: block;
+      font-size: 0.8em;
+      line-height: 1.5em;
+  }
+
+  #skills-h3 {
     display: block;
   }
+
+  .biopic {
+
+  }
 }
+
+@media only screen and (min-width: 790px) {
+
+  #skills/*,
+  .biopic*/ {
+      font-size: 1em;
+  }
+
+  #topContacts {
+        display: flex;
+        /*float: right;
+        background-color: #3b413c;*/
+      }
+
+}
+
+
+
+
 
