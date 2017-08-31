@@ -65,10 +65,11 @@ var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 /***************************************************************
 
-  Variables definining the SVG element for our bar chart
+
 
 ************************************************************/
-var HTMLbarChart = "<svg id='svgVisualize' width='500' height='500'></svg>";
+var HTMLskillsSubtitle = "<h2>Coding Skills</h2>";
+var HTMLskillsProgressBar = "<div class='progressContainer'><div class='progressFill'></div></div>";
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';

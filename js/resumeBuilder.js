@@ -90,11 +90,58 @@ var education = {
 /***********   DISPLAY FUNCTION    ************/
 
 var codingSkills = {
+		"serverSide" : {
+			"caption" : "Server Side Technologies/Programming Languages",
+			"languages" : [{
+				"name" : "Java",
+				"percentage" : "80"
+			}, {
+				"name" : "PHP",
+				"percentage" : "65"
+			}, {
+				"name" : "mySQL",
+				"percentage" : "70"
+			}]
+		},
+		"FrontEnd" : {
+			"caption" : "Client Side/Web Technologies",
+			"languages" : [{
+				"name" : "HTML, CSS, and Responsive Websites",
+				"percentage" : "80"
+			}, {
+				"name" : "Javascript, Jquery",
+				"percentage" : "65"
+			}]
+		}
 
+	}
+
+/***********************DEBUGGING*************************/
+/*
+var data = [
+	{name: "Locke",    value:  4},
+  	{name: "Reyes",    value:  8},
+  	{name: "Ford",     value: 15},
+  	{name: "Jarrah",   value: 16},
+  	{name: "Shephard", value: 23},
+  	{name: "Kwon",     value: 42}
+
+]*/
+
+var data = {
+
+	"datum":[
+	{"name": "Locke",    "value":  4},
+  	{"name": "Reyes",    "value":  8},
+  	{"name": "Ford",     "value": 15},
+  	{"name": "Jarrah",   "value": 16},
+  	{"name": "Shephard", "value": 23},
+  	{"name": "Kwon",     "value": 42}]
 }
 
 
 
+/*****************************************************/
 
 
 work.display = function(){
@@ -217,23 +264,8 @@ education.display = function() {
 
 
 
-function displaySkills(){
-	$("#codingSkills").append(HTMLbarChart);
-
-	var vis = d3.select("#svgVisualize");
-
-	var xRange = d3.scaleLinear().range([40, 400]).domain([0,100]);
-	var yRange = d3.scaleLinear().range([40, 400]).domain([0,100]);
-
-	var xAxis = d3.axisBottom().scale(xRange);
-	var yAxis = d3.axisLeft().scale(yRange);
-
-	vis.append("svg:g").call(xAxis);
-	vis.append("svg:g").call(yAxis).attr("transform", "translate(0,40)");
-
-
-
-
+codingSkills.display = function(){
+	$("#codingSkills").append(HTMLskillsSubtitle);
 }
 
 
@@ -242,4 +274,4 @@ bio.display();
 work.display();
 projects.display();
 education.display();
-displaySkills();
+codingSkills.display();
