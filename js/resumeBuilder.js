@@ -89,7 +89,9 @@ var education = {
 
 /***********   DISPLAY FUNCTION    ************/
 
+var codingSkills = {
 
+}
 
 
 
@@ -215,9 +217,29 @@ education.display = function() {
 
 
 
+function displaySkills(){
+	$("#codingSkills").append(HTMLbarChart);
+
+	var vis = d3.select("#svgVisualize");
+
+	var xRange = d3.scaleLinear().range([40, 400]).domain([0,100]);
+	var yRange = d3.scaleLinear().range([40, 400]).domain([0,100]);
+
+	var xAxis = d3.axisBottom().scale(xRange);
+	var yAxis = d3.axisLeft().scale(yRange);
+
+	vis.append("svg:g").call(xAxis);
+	vis.append("svg:g").call(yAxis).attr("transform", "translate(0,40)");
+
+
+
+
+}
+
 
 
 bio.display();
 work.display();
 projects.display();
 education.display();
+displaySkills();

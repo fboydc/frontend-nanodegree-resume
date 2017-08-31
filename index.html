@@ -58,6 +58,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     <section id="education" class="gray">
       <h2>Education</h2>
     </section>
+    <section id="codingSkills">
+    </section>
     <section id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
     </section>
@@ -87,10 +89,14 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   the DOM. jQuery is fast and easy to use, but it doesn't do anything
   you can't accomplish with vanilla (regular) JavaScript.
   -->
-  <script src="js/jQuery.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 
   <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
 
   <!--
   The next line tells the browser where to download the JavaScript file you'll be
@@ -100,6 +106,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <script src="js/resumeBuilder.js"></script>
 
 
+
   <!--
   These scripts are written in JavaScript. You'll be breaking them down as part of
   a quiz. Essentially, the next few lines are checking to see if you have not
@@ -107,7 +114,6 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   of the resume, then that part of the resume does not show up. More on this in the
   course.
   -->
-
   <script>
     // Notice how all of a sudden there's JavaScript inside this HTML
     // document? You can write JavaScript between <script> tags. At the end of your
@@ -145,5 +151,6 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       document.getElementById('mapDiv').style.display = 'none';
     }
   </script>
+
 </body>
 </html>

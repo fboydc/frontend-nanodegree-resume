@@ -63,6 +63,13 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
+/***************************************************************
+
+  Variables definining the SVG element for our bar chart
+
+************************************************************/
+var HTMLbarChart = "<svg id='svgVisualize' width='500' height='500'></svg>";
+
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 

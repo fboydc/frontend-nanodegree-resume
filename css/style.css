@@ -183,6 +183,7 @@ a {
 .white-text {
   font-weight: bold;
   color: #fff;
+  font-size: 1.3em;
 }
 
 .gray {
@@ -264,6 +265,7 @@ width: 100%;
 #role_title {
   font-weight: 600;
   color: #fff;
+  font-size: 1.2em;
 }
 
 
@@ -346,7 +348,7 @@ width: 100%;
   #skills-h3 {
     display: block;
   }
-  
+
   #role_title {
     display: inline;
   }
