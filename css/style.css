@@ -305,18 +305,45 @@ width: 100%;
   DESCRIPTION: The following styles apply to
                the skill bar chart svgs;
 **************************************************/
-.chart
-rect {
-  fill:steelblue;
+#codingSkills {
+  width: 100%;
 }
 
-.chart
-text {
-  fill: white;
-  font: 10px sans-serif;
-  text-anchor: end;
+#skills-container {
+  width: 95%;
+  margin-left: 5%;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.skills-entry {
+  width: 100%;
+  margin-bottom: 2em;
 }
 
+.skills-content {
+  width: 100%;
+}
+
+.skill:not(:first-of-type) {
+  margin-top: 2em;
+  width: 100%;
+  text-align: left;
+}
+
+.progress-bar {
+  width: 100%;
+  max-width: 300px;
+  height: 30px;
+  background-color: #ddd;
+}
+
+.progress {
+  /*width: 60%;*/
+  height: 30px;
+  background-color: #94D1BE;
+}
 
 
 
@@ -324,15 +351,6 @@ text {
 
 /* Media queries to handle various device widths */
 
-@media only screen and (max-width: 358px){
-  /*h1 {
-    font-size: 1.5em;
-  }
-
-  #role_title {
-    font-size: 0.7em;
-  }*/
-}
 
 
 @media only screen and (max-width:900px) {
@@ -399,10 +417,17 @@ text {
     justify-content: space-around;
     padding: 10px;
   }
-  /*
-  #footerContacts li {
-    display: inline-block;
-  }*/
+  
+  #skills-container {
+    flex-direction: row;
+  }
+  
+  .skills-entry {
+    width: 50%;
+    margin-bottom: 2em;
+  }
+
+
 }
 
 

@@ -64,12 +64,21 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 /***************************************************************
-
+  
 
 
 ************************************************************/
-var HTMLskillsSubtitle = "<h2>Coding Skills</h2>";
-var HTMLskillsProgressBar = "<div class='progressContainer'><div class='progressFill'></div></div>";
+var HTMLskillsContainer = "<div id='skills-container'></div>";
+var HTMLskillsEntry = "<div class='skills-entry'></div>";
+var HTMLskillsSubtitle = "<h3>%data%</h3>";
+var HTMLskillsContent = "<div class='skills-content'></div>";
+var HTMLskill = "<div class='skill'></div>";
+var HTMLskillLabel = "<h4 class='skill-label'>%data%</h4>";
+var HTMLskillsProgressBar = "<div class='progress-bar'></div>";
+var HTMLprogress = " <div class='progress'></div>";
+
+/*****************************************************************/
+
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';

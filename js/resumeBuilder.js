@@ -90,7 +90,8 @@ var education = {
 /***********   DISPLAY FUNCTION    ************/
 
 var codingSkills = {
-		"serverSide" : {
+	"skills": [{
+		"skill" : {
 			"caption" : "Server Side Technologies/Programming Languages",
 			"languages" : [{
 				"name" : "Java",
@@ -102,42 +103,25 @@ var codingSkills = {
 				"name" : "mySQL",
 				"percentage" : "70"
 			}]
-		},
-		"FrontEnd" : {
-			"caption" : "Client Side/Web Technologies",
+		}
+	 },{
+	 	"skill" : {
+			"caption" : "Client and Web Technologies",
 			"languages" : [{
 				"name" : "HTML, CSS, and Responsive Websites",
 				"percentage" : "80"
 			}, {
-				"name" : "Javascript, Jquery",
-				"percentage" : "65"
+				"name" : "Javascript and jQuery",
+				"percentage" : "75"
+			}, {
+				"name" : "React",
+				"percentage" : "10"
 			}]
 		}
-
-	}
-
-/***********************DEBUGGING*************************/
-/*
-var data = [
-	{name: "Locke",    value:  4},
-  	{name: "Reyes",    value:  8},
-  	{name: "Ford",     value: 15},
-  	{name: "Jarrah",   value: 16},
-  	{name: "Shephard", value: 23},
-  	{name: "Kwon",     value: 42}
-
-]*/
-
-var data = {
-
-	"datum":[
-	{"name": "Locke",    "value":  4},
-  	{"name": "Reyes",    "value":  8},
-  	{"name": "Ford",     "value": 15},
-  	{"name": "Jarrah",   "value": 16},
-  	{"name": "Shephard", "value": 23},
-  	{"name": "Kwon",     "value": 42}]
+	 }]
+		
 }
+
 
 
 
@@ -265,7 +249,22 @@ education.display = function() {
 
 
 codingSkills.display = function(){
-	$("#codingSkills").append(HTMLskillsSubtitle);
+	$("#codingSkills").append(HTMLskillsContainer);
+	codingSkills.skills.forEach(function(v_1, i_1, a_1){
+		$("#skills-container").append(HTMLskillsEntry);
+		var formattedSkillSubtitle = HTMLskillsSubtitle.replace("%data%", codingSkills.skills[i_1].skill.caption);
+		$(".skills-entry:last").append(formattedSkillSubtitle)
+		$(".skills-entry:last").append(HTMLskillsContent);
+		codingSkills.skills[i_1].skill.languages.forEach(function(v_2, i_2, a_2){
+			//console.log(codingSkills.skills[i_1].skill.languages[i_2]);
+			$(".skills-content:last").append(HTMLskill);
+			var formattedSkillLabel = HTMLskillLabel.replace("%data%", codingSkills.skills[i_1].skill.languages[i_2].name)
+			$(".skill:last").append(formattedSkillLabel);
+			$(".skill:last").append(HTMLskillsProgressBar);
+			$(".progress-bar:last").append(HTMLprogress);
+			$(".progress:last").width(codingSkills.skills[i_1].skill.languages[i_2].percentage+"%")
+		});
+	});
 }
 
 
