@@ -1,22 +1,34 @@
+/**********************************************************
+AUTHOR: Felipe Boyd
+DESCRIPTION:  This file contains raw data, used to populate
+              index.html.
+OTHER FILES:  Helper.js, used as a reference library to add html tags
+              along with raw data into index.html.
+**********************************************************/
+
+/**************************************************************
+THIS SECTION CONTAINS THE FOUR OBJECTS AS PER REQUESTED BY THE
+PROJECT RUBRIC. (MINIMUM SCHEMA REQUIREMENT)
+**************************************************************/
 var work = {
 	"jobs" : [
 		{
 			"employer" : "Delta Analytics",
 			"title" : "Full Stack Developer",
-			"location" : "Panama City",
+			"location" : "Panama City, Panama",
 			"dates" : "January, 2013 - March, 2015",
 			"description" : "Our team was in charge of implementing the OpenBravo ERP software, which required development of customized modules such as printing, data import, and Jasper Reports. The software offered many convenient tools for management such as shipment and order tracking, multi-warehousing, and robust structured data."
 		},
 		{
 			"employer" : "Banco Delta",
 			"title" : "intern",
-			"location" : "Panama City",
+			"location" : "Panama City, Panama",
 			"dates" : "May, 2011 - Aug, 2011",
 			"description" : "As an intern in one of the fastest growing financial entities in Panama, our project consisted of implementing the Scrum SDLC methodology. Management immediately saw the results as an effect of the increased transparency, and internal users were able to get customized features faster."
 		}
 
 	]
-}
+};
 
 
 var projects = {
@@ -34,12 +46,11 @@ var projects = {
 			"images" : ["http://via.placeholder.com/300x200"]
 		}
 	]
-}
+};
 
 var bio = {
 	"name" : "Felipe Boyd",
 	"role" : "Web Developer",
-	"welcomeMessage" : "Welcome to my website",
 	"contacts" : {
 		"mobile": "+507 6267-1469",
 		"email": "fboydc@gmail.com",
@@ -47,11 +58,12 @@ var bio = {
 		"twitter": "felipe.boyd",
 		"location": "Miami, FL"
 	},
+	"welcomeMessage" : "Welcome to my website",
 	"skills": [
 		"Front End Development", "Server Side Technologies", "Responsive Websites", "Web/Graphic Design Rookie", "Aspiring 3D Modeler"
 	],
-	"biopic": "http://placekitten.com/g/400/400"
-}
+	"biopic": "./images/dog.jpg"
+};
 
 
 
@@ -85,9 +97,15 @@ var education = {
 			"url" : "http://www.udacity.com/course/"
 		}
 	]
-}
+};
+/*********************** END OF REQUIRED OBJECTS *************************/
 
-/***********   DISPLAY FUNCTION    ************/
+
+
+/******************************** EXTRA *******************************
+ THIS EXTRA OBJECT WILL CONTAIN THE CODING SKILLS/PROGRAMMING LANGUAGES
+ WITH THEIR RESPECTIVE VALUE (IN PERCENTAGE: 0-100)
+***********************************************************************/
 
 var codingSkills = {
 	"skills": [{
@@ -118,14 +136,27 @@ var codingSkills = {
 				"percentage" : "10"
 			}]
 		}
+	 }, {
+	 	"skill" : {
+			"caption" : "MVC Frameworks",
+			"languages" : [{
+				"name" : "Phalcon",
+				"percentage" : "75"
+			}, {
+				"name" : "JSF",
+				"percentage" : "70"
+			}]
+		}
 	 }]
-		
-}
+
+};
 
 
 
 
-/*****************************************************/
+/************************************************************
+  FUNCTION DEFINITIONS
+*********************************************************/
 
 
 work.display = function(){
@@ -142,7 +173,9 @@ work.display = function(){
 		$(".work-entry:last").append(formattedWorkDescription);
 		});
 
-}
+};
+
+
 
 projects.display = function(){
 	projects.projects.forEach(function(value, index, array){
@@ -167,14 +200,14 @@ projects.display = function(){
 
 
 	});
-}
+};
+
 
 
 bio.display = function(){
-
-
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 	var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
@@ -182,6 +215,7 @@ bio.display = function(){
 	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
+	$("#header").append(formattedWelcomeMsg);
 	$("#header").prepend(formattedRole);
 	$("#header").prepend(formattedName);
 	$("#header").append(formattedBioPic);
@@ -208,8 +242,11 @@ bio.display = function(){
 
 	}
 
-	$("#mapDiv").append(googleMap)
-}
+	$("#mapDiv").append(googleMap);
+};
+
+
+
 
 education.display = function() {
 	education.schools.forEach(function(value, index, array){
@@ -226,7 +263,7 @@ education.display = function() {
 		education.schools[index].majors.forEach(function(value){
 			var formattedMajor = HTMLschoolMajor.replace("%data%", value);
 			$(".education-entry:last").append(formattedMajor);
-		})
+		});
 
 	});
 
@@ -244,7 +281,7 @@ education.display = function() {
 		$(".education-entry:last").append(formattedDates);
 		$(".education-entry:last").append(formattedUrl);
 	});
-}
+};
 
 
 
@@ -253,19 +290,20 @@ codingSkills.display = function(){
 	codingSkills.skills.forEach(function(v_1, i_1, a_1){
 		$("#skills-container").append(HTMLskillsEntry);
 		var formattedSkillSubtitle = HTMLskillsSubtitle.replace("%data%", codingSkills.skills[i_1].skill.caption);
-		$(".skills-entry:last").append(formattedSkillSubtitle)
+		$(".skills-entry:last").append(formattedSkillSubtitle);
 		$(".skills-entry:last").append(HTMLskillsContent);
+
+		/*************** THIS WILL ITREATE THROUGH ALL THE LANGUAGES IN THE CURRENT CODING SKILL ************************/
 		codingSkills.skills[i_1].skill.languages.forEach(function(v_2, i_2, a_2){
-			//console.log(codingSkills.skills[i_1].skill.languages[i_2]);
 			$(".skills-content:last").append(HTMLskill);
-			var formattedSkillLabel = HTMLskillLabel.replace("%data%", codingSkills.skills[i_1].skill.languages[i_2].name)
+			var formattedSkillLabel = HTMLskillLabel.replace("%data%", codingSkills.skills[i_1].skill.languages[i_2].name);
 			$(".skill:last").append(formattedSkillLabel);
 			$(".skill:last").append(HTMLskillsProgressBar);
 			$(".progress-bar:last").append(HTMLprogress);
-			$(".progress:last").width(codingSkills.skills[i_1].skill.languages[i_2].percentage+"%")
+			$(".progress:last").width(codingSkills.skills[i_1].skill.languages[i_2].percentage+"%");
 		});
 	});
-}
+};
 
 
 
