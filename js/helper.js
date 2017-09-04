@@ -68,7 +68,7 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 /***************************************************************
-  CODING SKILL TAGS 
+  CODING SKILL TAGS
 ************************************************************/
 
 var HTMLskillsContainer = "<div id='skills-container'></div>";
@@ -95,7 +95,7 @@ var HTMLrssArticle = "<article class='rss-article'><img src='%data%' alt='articl
 var HTMLrssTextContainer = "<div class='rssContainer'></div>";
 var HTMLrssItemTitle = "<h3><a href='%data%' class='rssLink'></a></h3>";
 var HTMLrssText = "<p>%data%</p>";
-var HTMLrssTextPubDate = "<sub>%data%</sub>"
+var HTMLrssTextPubDate = "<sub>%data%</sub>";
 
 /*
 The Internationalize Names challenge found in the lesson Flow Control from JavaScript Basics requires you to create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
