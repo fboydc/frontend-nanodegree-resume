@@ -95,7 +95,7 @@ p {
 .entry-title {
    color: #94D1BE;
   font-weight: 600;
-  font-size: 1.2em;
+  font-size: 1.3em;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -244,7 +244,8 @@ SECTION: Header and Footer
   font-size: 14px;
   color: #999;
   line-height: 16px;
-  float: left;
+  /*float: left;*/
+
 }
 
 .location-text {
@@ -252,7 +253,9 @@ SECTION: Header and Footer
   font-size: 14px;
   color: #999;
   line-height: 16px;
-  float: right;
+
+  /*float: right;*/
+
 
 }
 
@@ -299,7 +302,7 @@ SECTION: map;
   margin: 0 5%;
   border-radius: 5px;
   box-shadow:10px 5px 5px black;
-  /*margin-bottom: 20px;*/
+
 }
 
 #mapDiv {
@@ -307,7 +310,7 @@ SECTION: map;
   height: 400px;
   width: 100%;
   background-color: #daf0ee;
-  padding-bottom: 6em;
+  padding-bottom: 8em;
 
 }
 
@@ -360,6 +363,34 @@ SECTION: map;
 /*************END**********************/
 
 
+/*************************************************
+  SECTION: RSS Feeds;
+**************************************************/
+
+article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2em;
+
+}
+
+article 
+p, 
+em {
+  font-size: 1.1em;
+}
+
+.feed-text {
+  margin-left: 20px;
+}
+
+article >
+img {
+  width: 100px;
+  height: 100px;
+}
+
 /**************************************************
   SECTION: FOOTER;
 ***************************************************/
@@ -397,6 +428,19 @@ SECTION: map;
 }
 
 
+@media only screen and (min-width: 620px){
+  article {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+
+  }
+  .rssLink {
+    max-width: 100px;
+    max-height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+  }
+}
 
 @media only screen and (min-width:500px){
 
@@ -413,6 +457,18 @@ SECTION: map;
 
   #role_title {
     display: inline;
+  }
+
+  #mapDiv {
+    padding-bottom: 6em;
+  }
+
+  .date-text {
+    float: left;
+  }
+
+.location-text {
+    float: right;
   }
 
 }

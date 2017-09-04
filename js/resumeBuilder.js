@@ -28,7 +28,7 @@ var work = {
 		}
 
 	]
-};
+}
 
 
 var projects = {
@@ -46,7 +46,7 @@ var projects = {
 			"images" : ["http://via.placeholder.com/300x200"]
 		}
 	]
-};
+}
 
 var bio = {
 	"name" : "Felipe Boyd",
@@ -63,7 +63,7 @@ var bio = {
 		"Front End Development", "Server Side Technologies", "Responsive Websites", "Web/Graphic Design Rookie", "Aspiring 3D Modeler"
 	],
 	"biopic": "./images/dog.jpg"
-};
+}
 
 
 
@@ -97,7 +97,7 @@ var education = {
 			"url" : "http://www.udacity.com/course/"
 		}
 	]
-};
+}
 /*********************** END OF REQUIRED OBJECTS *************************/
 
 
@@ -149,7 +149,15 @@ var codingSkills = {
 		}
 	 }]
 
-};
+}
+
+var rssFeed = {
+	"content" : {
+		"title" : "Communications of the ACM",
+		"rssimage" : "images/acm-logo.jpg",		
+		"url" : "http://www.felipeboyd.com/webservices/index.php"
+		}
+}
 
 
 
@@ -306,9 +314,43 @@ codingSkills.display = function(){
 };
 
 
+rssFeed.display = function(){
+
+	var formattedRssTitle = HTMLrssTitle.replace("%data%", rssFeed.content.title);
+	var formattedRssArticle = HTMLrssArticle.replace("%data%", rssFeed.content.rssimage); 
+	$.ajax(rssFeed.content.url, {
+        accepts:{
+            xml:"text/xml"
+        },
+        dataType:"xml",
+        success:function(data) {
+        	$("#feeds").append(formattedRssTitle);
+        	var numberOfFeed = 5;
+        	$(data).find("item").each(function(){
+        		var el = $(this);
+        		var formattedItemTitle = HTMLrssItemTitle.replace("%data%", el.find("link").text());
+        		var formattedItemText = HTMLrssText.replace("%data%", el.find("description").text());
+        		$("#feeds").append(formattedRssArticle);
+        		$(".rss-article:last").append(HTMLrssTextContainer);
+        		$(".rssContainer:last").append(formattedItemTitle);
+        		$(".rssLink:last").append(el.find("title").text());
+        		$(".rssContainer:last").append(formattedItemText);
+        		$("#feeds").append("<hr>");
+
+        	});
+            
+
+    	
+        }   
+    });
+}
+
+
+
 
 bio.display();
 work.display();
 projects.display();
 education.display();
 codingSkills.display();
+rssFeed.display();
