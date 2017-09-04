@@ -28,7 +28,7 @@ var work = {
 		}
 
 	]
-}
+};
 
 
 var projects = {
@@ -46,7 +46,7 @@ var projects = {
 			"images" : ["http://via.placeholder.com/300x200"]
 		}
 	]
-}
+};
 
 var bio = {
 	"name" : "Felipe Boyd",
@@ -63,7 +63,7 @@ var bio = {
 		"Front End Development", "Server Side Technologies", "Responsive Websites", "Web/Graphic Design Rookie", "Aspiring 3D Modeler"
 	],
 	"biopic": "./images/dog.jpg"
-}
+};
 
 
 
@@ -97,7 +97,7 @@ var education = {
 			"url" : "http://www.udacity.com/course/"
 		}
 	]
-}
+};
 /*********************** END OF REQUIRED OBJECTS *************************/
 
 
@@ -149,7 +149,7 @@ var codingSkills = {
 		}
 	 }]
 
-}
+};
 
 var rssFeed = {
 	"content" : {
@@ -157,7 +157,7 @@ var rssFeed = {
 		"rssimage" : "images/acm-logo.jpg",
 		"url" : "http://www.felipeboyd.com/webservices/index.php"
 		}
-}
+};
 
 
 
@@ -343,7 +343,7 @@ rssFeed.display = function(){
 
         }
     });
-}
+};
 
 
 
