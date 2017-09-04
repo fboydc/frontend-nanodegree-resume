@@ -93,7 +93,7 @@ p {
 
 
 .entry-title {
-   color: #94D1BE;
+   color: #4a4a4a;
   font-weight: 600;
   font-size: 1.3em;
   text-decoration: none;
@@ -375,8 +375,8 @@ article {
 
 }
 
-article 
-p, 
+article
+p,
 em {
   font-size: 1.1em;
 }
@@ -407,6 +407,43 @@ img {
 
 
 /*************END**********************************/
+
+
+
+/***************************************************
+  NAVBAR: MODIFICATIONS TO DEFAULT BOOTSTRAP CSS;
+***************************************************/
+.navbar-default {
+  margin: 0;
+  text-align: center;
+  background-color: #94d1be;
+  border: 1px solid #94d1be;
+  border-radius: 0;
+}
+
+.navbar .navbar-nav {
+
+  display: inline-block;
+  float: none;
+  text-align: center;
+
+}
+
+.navbar-default .navbar-nav > li > a {
+  height: 100%;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3em;
+  color: #fff;
+}
+
+.navbar-default .navbar-nav > li:hover {
+  background-color: #fff;
+}
+
+
+
+
 
 /* Media queries to handle various device widths */
 
@@ -471,6 +508,12 @@ img {
     float: right;
   }
 
+}
+
+@media(min-width: 768px){
+  .navbar-default {
+    height: 15px;
+  }
 }
 
 @media only screen and (min-width: 875px) {

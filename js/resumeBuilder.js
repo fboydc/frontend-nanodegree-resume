@@ -72,7 +72,7 @@ var education = {
 	"schools": [
 		{
 			"name": "Saint Joseph's University",
-			"location": "Philadelphia",
+			"location": "Philadelphia, PA",
 			"degree": "Masters",
 			"majors" : ["Computer Science"],
 			"dates": "2010-2012",
@@ -80,7 +80,7 @@ var education = {
 		},
 		{
 			"name": "Saint Joseph's University",
-			"location" : "Philadelphia",
+			"location" : "Philadelphia, PA",
 			"degree" : "Bachelors",
 			"majors" : ["international business"],
 			"dates" : "2007-2010",
@@ -154,7 +154,7 @@ var codingSkills = {
 var rssFeed = {
 	"content" : {
 		"title" : "Communications of the ACM",
-		"rssimage" : "images/acm-logo.jpg",		
+		"rssimage" : "images/acm-logo.jpg",
 		"url" : "http://www.felipeboyd.com/webservices/index.php"
 		}
 }
@@ -317,7 +317,7 @@ codingSkills.display = function(){
 rssFeed.display = function(){
 
 	var formattedRssTitle = HTMLrssTitle.replace("%data%", rssFeed.content.title);
-	var formattedRssArticle = HTMLrssArticle.replace("%data%", rssFeed.content.rssimage); 
+	var formattedRssArticle = HTMLrssArticle.replace("%data%", rssFeed.content.rssimage);
 	$.ajax(rssFeed.content.url, {
         accepts:{
             xml:"text/xml"
@@ -325,7 +325,6 @@ rssFeed.display = function(){
         dataType:"xml",
         success:function(data) {
         	$("#feeds").append(formattedRssTitle);
-        	var numberOfFeed = 5;
         	$(data).find("item").each(function(){
         		var el = $(this);
         		var formattedItemTitle = HTMLrssItemTitle.replace("%data%", el.find("link").text());
@@ -335,13 +334,14 @@ rssFeed.display = function(){
         		$(".rssContainer:last").append(formattedItemTitle);
         		$(".rssLink:last").append(el.find("title").text());
         		$(".rssContainer:last").append(formattedItemText);
+
         		$("#feeds").append("<hr>");
 
         	});
-            
 
-    	
-        }   
+
+
+        }
     });
 }
 
